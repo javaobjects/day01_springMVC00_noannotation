@@ -7,6 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<a href="hello.action">点击链接访问springMVC环境</a>
+	<h1>处理器映射器</h1>
+	<a href="hello.action">BeanNameUrlHandlerMapping</a><br/><br/>
+	<a href="hello2.action">SimpleUrlHandlerMapping</a>
+	
+	<h1>处理器映射器</h1>
+	<a href="hello2.action">SimpleControllerHandlerAdapter</a><br/><br/>
+	<a href="hello66.action">HttpRequestHandlerAdapter</a><br/><br/>
 </body>
 </html>

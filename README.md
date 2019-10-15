@@ -168,3 +168,17 @@ public class HelloController implements Controller {
 #### 6. 运行项目
 
 ![](WebContent/Images/6.png)
+
+#### 7. springMVC原理图
+
+![](WebContent/Images/7.png)
+
+#### 处理映射器两配置方式以及处理适配器两种配置方式
+
+![](WebContent/Images/8.png)
+
+![](WebContent/Images/9.png)
+
+![](WebContent/Images/10.png)
+
+![](WebContent/Images/11.png)

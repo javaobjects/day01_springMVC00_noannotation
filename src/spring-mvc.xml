@@ -10,13 +10,38 @@
 	                       http://www.springframework.org/schema/aop
 	                       http://www.springframework.org/schema/aop/spring-aop-4.1.xsd">
 
-		<!-- 2. 处理映射器:负责根据请求的url查找指定的处理器-->
+		<!-- 
+			2. 【非注解】处理映射器:负责根据请求的url查找指定的处理器
+			-->
+		<!-- 方式一:BeanNameUrlHandlerMapping根据用户请求的url匹配bean的name属性值 -->
 		<bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"></bean>
 		
-		<!-- 3. 处理器 -->
-		<bean name="/hello.action" class="com.tencent.controller.HelloController"></bean>
-		<!-- 4. 处理适配器 -->
+		<!-- 方式二: SimpleUrlHandlerMapping 根据用户请求的url匹配bean的id属性值,属于方式一的增强版，与方式一共存 -->
+		<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+			<property name="mappings">
+				<props>
+					<prop key="/hello2.action">helloController</prop>
+					<prop key="/hello66.action">helloController2</prop>
+				</props>
+			</property>
+		</bean>
+		
+		
+		
+	
+		<!-- 
+			4. 【非注解】处理适配器：负责适配执行处理器 
+			-->
+		<!-- 方式一:SimpleControllerHandlerAdapter,适配执行所有实现了org.springframework.web.servlet.mvc.Controller接口类 -->
 		<bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"></bean>
+		<!-- 方式二:HttpRequestHandlerAdapter适配执行所有实现了org.springframework.web.servlet.mvc.
+		HttpRequestHandlerAdapter接口类 ,可以与方式一共存-->
+		<bean class="org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter"></bean>
+		
+			<!-- 3. 处理器 -->
+		<bean id="helloController" name="/hello.action" class="com.tencent.controller.HelloController"></bean>
+		<bean id="helloController2"  class="com.tencent.controller.HelloController2"></bean>
+		
 		<!-- 5. 视图解析器 -->
 		<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"></bean>
 </beans>
