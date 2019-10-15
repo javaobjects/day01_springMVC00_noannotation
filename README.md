@@ -1,4 +1,6 @@
-# springMVC环境搭建
+# springMVC
+
+## springMVC环境搭建
 
 #### 1. 导入对应的包
 
@@ -173,7 +175,7 @@ public class HelloController implements Controller {
 
 ![](WebContent/Images/7.png)
 
-#### 处理映射器两配置方式以及处理适配器两种配置方式
+## 处理映射器两配置方式以及处理适配器两种配置方式
 
 ![](WebContent/Images/8.png)
 
