@@ -167,4 +167,4 @@ public class HelloController implements Controller {
 
 #### 6. 运行项目
 
-![](WebContent/Images/1.png)
+![](WebContent/Images/6.png)
